@@ -8,5 +8,10 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UsuariosApi.Domain\UsuariosApi.Domain.csproj" />
+    <ProjectReference Include="..\UsuariosApi.Infra\UsuariosApi.Infra.csproj" />
+  </ItemGroup>
+
 
 </Project>
