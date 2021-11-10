@@ -18,10 +18,10 @@
         <td>{{user.birthDate | date: "dd / MM / yyyy"}}</td>
         <td>{{user.scholarity | scholarity}}</td>
         <td>
-          <button mat-raised-button color="primary">
+          <button mat-raised-button color="primary" (click)="edit(user)">
             Editar
           </button>
-          <button mat-raised-button color="warn">
+          <button mat-raised-button color="warn" (click)="delete(user.id)">
             Excluir
           </button>
         </td>

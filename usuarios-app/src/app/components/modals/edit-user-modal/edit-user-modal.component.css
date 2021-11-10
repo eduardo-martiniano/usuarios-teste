@@ -1,0 +1,16 @@
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+mat-form-field {
+  width: 270px;
+  margin: 10px;
+  font-size: 19px;
+}
+
+button {
+  width: 150px;
+  font-size: 17px;
+}

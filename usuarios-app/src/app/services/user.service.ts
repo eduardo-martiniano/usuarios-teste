@@ -8,7 +8,7 @@ import { User } from '../models/user.model';
 export class UserService {
 
   API_URL = "https://localhost:5001/api/users";
-  
+
   constructor(private http: HttpClient) { }
 
   readAll(): Promise<any> {
@@ -27,9 +27,9 @@ export class UserService {
     });
   }
 
-  edit(User: User, id: any): Promise<any> {
+  edit(user: User): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.http.put<any>(this.API_URL + '/' + id, User).subscribe(
+      this.http.put<any>(this.API_URL + '/' + user.id, user).subscribe(
         result => resolve(result),
         error => reject(error));
     });

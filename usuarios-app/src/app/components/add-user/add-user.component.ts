@@ -13,6 +13,7 @@ export class AddUserComponent implements OnInit {
 
   form: any;
   startDate = new Date(1990, 0, 1);
+  today = new Date();
 
   constructor(private fb: FormBuilder,
               private userService: UserService,

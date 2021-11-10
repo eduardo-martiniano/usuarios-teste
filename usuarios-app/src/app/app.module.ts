@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +21,8 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
 import { ScholarityPipe } from './pipes/scholarity.pipe';
 import { ToastrModule } from 'ngx-toastr';
+import { DeleteUserConfirmModalComponent } from './components/modals/delete-user-confirm-modal/delete-user-confirm-modal.component';
+import { EditUserModalComponent } from './components/modals/edit-user-modal/edit-user-modal.component';
 registerLocaleData("ptBr");
 
 @NgModule({
@@ -28,7 +31,9 @@ registerLocaleData("ptBr");
     UsersComponent,
     AddUserComponent,
     SideNavComponent,
-    ScholarityPipe
+    ScholarityPipe,
+    DeleteUserConfirmModalComponent,
+    EditUserModalComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +49,7 @@ registerLocaleData("ptBr");
     MatSidenavModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatDialogModule,
     ToastrModule.forRoot()
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-br' }],

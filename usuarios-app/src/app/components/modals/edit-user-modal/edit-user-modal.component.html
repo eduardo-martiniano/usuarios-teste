@@ -1,4 +1,4 @@
-<h2>Cadastrar novo usuario</h2>
+<h2>Editar</h2>
 <form [formGroup]="form">
   <p>
     <mat-form-field appearance="outline">
@@ -35,5 +35,8 @@
       </mat-select>
     </mat-form-field>
   </p>
-  <button mat-raised-button color="primary" [disabled]="!formValid" (click)="submit()">Salvar</button>
+  <div mat-dialog-actions class="actions">
+    <button mat-raised-button color="primary" [disabled]="!formValid" (click)="confirmDelete()">Salvar</button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancelar</button>
+  </div>
 </form>

@@ -25,8 +25,6 @@ namespace UsuariosApi.Application.Validators
                 .NotNull().WithMessage("Digite a data de aniversario do usuario.");
              
              RuleFor(u => u.Scholarity)
-                .NotEmpty().WithMessage("A escolaridade é obrigatoria.")
-                .NotNull().WithMessage("A escolaridade é obrigatoria.")
                 .IsInEnum().WithMessage("O valor para escolaridade não é válido.");
          }
     }
