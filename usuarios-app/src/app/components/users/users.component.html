@@ -1,0 +1,31 @@
+<div class="content">
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Email</th>
+        <th>Data de Nascimento</th>
+        <th>Escolaridade</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.nome}}</td>
+        <td>{{user.sobrenome}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.dataNascimento}}</td>
+        <td>{{user.escolaridade}}</td>
+        <td>
+          <button mat-raised-button color="primary">
+            Editar
+          </button>
+          <button mat-raised-button color="warn">
+            Excluir
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

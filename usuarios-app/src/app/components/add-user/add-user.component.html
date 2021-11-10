@@ -1,0 +1,39 @@
+<h2>Cadastrar novo usuario</h2>
+<form [formGroup]="form">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Sobrenome</mat-label>
+      <input matInput formControlName="lastName" />
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Data de nascimento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
+    </mat-form-field>
+  </p>
+  <p>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Escolaridade</mat-label>
+      <mat-select formControlName="scholarity">
+        <mat-option [value]=0>Infantil</mat-option>
+        <mat-option [value]=1>Fundamental</mat-option>
+        <mat-option [value]=2>Médio</mat-option>
+        <mat-option [value]=3>Superior</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+  <button mat-raised-button color="primary" [disabled]="!formValid" (click)="submit()">Salvar</button>
+</form>

@@ -1,0 +1,39 @@
+.sidenav {
+  background-color: #3465a4;
+  width: 200px;
+}
+
+.sidenav a {
+  color: #fff;
+}
+
+.sidenav i {
+  padding-right: 10px;
+}
+
+.content{
+  padding: 16px;
+  background-color: #fff;
+  color: grey;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.options a {
+  margin-bottom: 30px;
+  text-decoration: none;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+}
+
+.options a:hover {
+  color: #000000;
+  transition: 0.5s;
+}
