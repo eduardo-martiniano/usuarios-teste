@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models/user.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-users',
@@ -7,69 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  users = [
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-    {
-      "nome": "Eduardo", "sobrenome": "Martiniano", "email": "eduardovasco@gmail.com", "dataNascimento": "07-07-1999", "escolaridade": "Superior"
-    },
-  ];
+  users: User[] = [];
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.readAll().then(usersResponse => {
+      this.users = usersResponse;
+      });
   }
 
 }

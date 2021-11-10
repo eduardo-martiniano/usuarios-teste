@@ -18,6 +18,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { registerLocaleData } from '@angular/common';
+import { ScholarityPipe } from './pipes/scholarity.pipe';
+import { ToastrModule } from 'ngx-toastr';
 registerLocaleData("ptBr");
 
 @NgModule({
@@ -25,7 +27,8 @@ registerLocaleData("ptBr");
     AppComponent,
     UsersComponent,
     AddUserComponent,
-    SideNavComponent
+    SideNavComponent,
+    ScholarityPipe
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ registerLocaleData("ptBr");
     MatSelectModule,
     MatSidenavModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ToastrModule.forRoot()
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-br' }],
   bootstrap: [AppComponent],

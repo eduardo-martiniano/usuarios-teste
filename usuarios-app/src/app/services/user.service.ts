@@ -7,7 +7,8 @@ import { User } from '../models/user.model';
 })
 export class UserService {
 
-  API_URL = "";
+  API_URL = "https://localhost:5001/api/users";
+  
   constructor(private http: HttpClient) { }
 
   readAll(): Promise<any> {

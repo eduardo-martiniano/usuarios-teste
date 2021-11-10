@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { User } from 'src/app/models/user.model';
+import { MessageService } from 'src/app/services/message.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-add-user',
@@ -11,8 +14,9 @@ export class AddUserComponent implements OnInit {
   form: any;
   startDate = new Date(1990, 0, 1);
 
-  
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+              private userService: UserService,
+              private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.startForm();
@@ -29,8 +33,11 @@ export class AddUserComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.form.value);
-    this.form.reset();
+    let user = this.form.value as User;
+    this.userService.create(user).then(() => {
+      this.messageService.showSucess("Usuario cadastrado com sucesso!")
+      this.form.reset();
+    }).catch(() => this.messageService.showError("Algo deu errado!"));
   }
 
   get formValid(): boolean {

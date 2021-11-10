@@ -30,13 +30,21 @@ namespace UsuariosApi.Application
             });
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddCors(options => options.AddPolicy("CorsPolicy",
+            builder =>
+            {
+                builder.AllowAnyHeader()
+                       .AllowAnyMethod()
+                       .SetIsOriginAllowed((host) => true)
+                       .AllowCredentials();
+            }));
 
             services.AddControllers()
-                .AddFluentValidation(p => 
+                .AddFluentValidation(p =>
                 {
                     p.RegisterValidatorsFromAssemblyContaining<UserValidator>();
                 });
-            
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "USERS-API", Version = "v1" });
@@ -50,10 +58,9 @@ namespace UsuariosApi.Application
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -12,11 +12,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-        <td>{{user.nome}}</td>
-        <td>{{user.sobrenome}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.lastName}}</td>
         <td>{{user.email}}</td>
-        <td>{{user.dataNascimento}}</td>
-        <td>{{user.escolaridade}}</td>
+        <td>{{user.birthDate | date: "dd / MM / yyyy"}}</td>
+        <td>{{user.scholarity | scholarity}}</td>
         <td>
           <button mat-raised-button color="primary">
             Editar
