@@ -26,7 +26,7 @@ namespace UsuariosApi.Application
         {
             services.AddDbContext<Context>(options =>
             {
-                options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=UsersDB;Integrated Security=True;");
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
             services.AddScoped<IUserRepository, UserRepository>();
