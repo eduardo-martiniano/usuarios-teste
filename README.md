@@ -1,7 +1,7 @@
 # 🚨 Versões 
-Node: 14.17.3
-Angular: 12.1.5
-NET Core: 3.1
+- Node: 14.17.3
+- Angular: 12.1.5
+- NET Core: 3.1
 
 # 🎁 Instruções para executar o projeto
 Tendo tudo instalado, siga os seguintes passsos:
